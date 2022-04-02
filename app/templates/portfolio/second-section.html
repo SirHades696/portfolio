@@ -1,0 +1,24 @@
+
+<div class="second-title center" id="Desarrollos">
+    <h1 >🤔¿Aun no estas convencido? Mira mis desarrollos.💻</h1>
+</div>
+<div class="center padded">
+    <div class='content padded center'>
+        <div class="all-columns">
+        {% for i in projects %}
+            <div class="column">
+                <div class='card'>
+                    <h3 class="blue">{{ projects[i][0] }}</h3>
+                    <p>
+                        {{ projects[i][1] }}
+                    </p>
+                    <a class="git" target="_blank" href='{{ projects[i][2] }}'>
+                        <img class="logo-social"
+                             src="{{ url_for('static', filename='/img/github.svg') }}">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>

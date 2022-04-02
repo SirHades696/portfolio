@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Bienvenido{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content center">
+        <div class="left">
+            <h1>Soy desarrollador</h1>
+            <h1>Adonai Emmanuel Nicanor Bautista</h1>
+            <p>Construyo aplicaciones con Python en forma dinámica utilizando Base de Datos Relaciones y también NoSQL como FireBase, además me encanta la programación de Bots en Telegram y el desarrollo de microservicios con Flask. 🐍<br>
+                Tengo un alto interés en Sistemas de Información Geográfica donde he desarrollado herramientas especializadas en análisis espacial tanto para ArcGIS como para QGIS, manipulando datos vectoriales e imágenes ráster. 🌎</p>
+            <p class="btns">
+                <a href="/#Contacto" class="btn">Contáctame</a><a href="/#Desarrollos" class="btn">Mira mis desarrollos</a>
+            </p>
+        </div>
+        <div class="right-img">
+            <img class="imagen" src=" {{ url_for('static', filename='/img/welcome2.png') }}">
+        </div>
+    </div>
+</div>
+{% include 'portfolio/first-section.html' %}
+<hr>
+{% include 'portfolio/second-section.html' %}
+<hr>
+{% include 'portfolio/third-section.html' %}
+{% endblock %}
