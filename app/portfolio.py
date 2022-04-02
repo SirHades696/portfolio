@@ -10,7 +10,7 @@ from flask import (
     current_app,
     url_for
 )
-from .projects import projects, saltos_cm, saltos_sm, tam
+from .projects import projects
 import sendgrid
 from sendgrid.helpers.mail import *
 
@@ -19,10 +19,7 @@ bp = Blueprint('portfolio', __name__, url_prefix='/')
 def index():
     return render_template(
                             'portfolio/index.html', 
-                            projects = projects, 
-                            saltos_cm = saltos_cm, 
-                            saltos_sm =saltos_sm,
-                            tam = tam)
+                            projects = projects)
 
 @bp.route('/mail', methods = ['POST', 'GET'])
 def send_mail():
