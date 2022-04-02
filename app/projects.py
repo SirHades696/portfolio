@@ -3,7 +3,7 @@ __author__ = 'SirHades696'
 __email__ = 'djnonasrm@gmail.com'
 
 projects = {
-    1 : ['Portfolio👽', '', 'https://github.com/SirHades696/portfolio'],
+    1 : ['Portfolio👽', 'Aplicación web hecha con Flask para mostrar el portafolio de proyectos desplegados en GitHub y un formulario de contacto.', 'https://github.com/SirHades696/portfolio'],
     2 : ['Anime Bot Telegram🤖','Bot disponible en telegram que se encarga de buscar animes y sus respectivos episodios a través de web scraping. ', 'https://github.com/SirHades696/animebot-python'],
     3 : ['To Do App📝','Aplicación web encarga de crear una lista de tareas para diferentes usuarios, mostradas a través de stick notes, esta app fue desarrollada con Flask.', 'https://github.com/SirHades696/lista_tareas_flask'],
     4 : ['PyPi Bot Telegram🤖','Bot disponible en Telegram que se encarga de buscar información acerca de paquetes para Python en la plataforma de PyPi.org.', 'https://github.com/SirHades696/Pypi_bot_telegram'],
