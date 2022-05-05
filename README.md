@@ -15,7 +15,7 @@ Donde:
 > `SENDGRID_KEY` : API Key obtenida del servicio de SendGrid.
 
 # ¿Qué Packages son necesarios?
-Todos los recursos usados para el desarrollo del bot se encuentran en: `requirements.txt`
+Todos los recursos usados para el desarrollo se encuentran en: `requirements.txt`
 
 > `pip install -r requirements.txt`
 
