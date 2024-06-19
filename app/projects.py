@@ -3,6 +3,10 @@ __author__ = "SirHades696"
 __email__ = "djnonasrm@gmail.com"
 
 projects = {
+    0: ["Datos-MIE🌐",
+        "Portal que contiene las capas espaciales creadas/usadas durante el trabajo de tesis de Maestría.",
+        "https://github.com/SirHades696/SIM-data",
+        ],
     1: [
         "Geoweb🌐",
         "Portal Geoweb que consume servicios de Geoserver, PostgreSQL (PostGIS) y Leaflet.",
