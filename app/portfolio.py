@@ -29,7 +29,7 @@ def send_mail():
     if request.method == "POST":
         send_email(data_message)
 
-def send_email(name, email, message):
+def send_email(data_message):
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
     sender_email = current_app.config["EMAIL_DEST"]
