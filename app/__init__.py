@@ -9,7 +9,8 @@ def create_app():
     app = Flask(__name__)
     
     app.config.from_mapping(
-        SENDGRID_KEY = os.environ.get('SENDGRID_API_KEY'),
+        EMAIL_DEST=os.environ.get("EMAIL_DEST"),
+        PSWD=os.environ.get("PSWD"),
     )
     
     from . import portfolio
