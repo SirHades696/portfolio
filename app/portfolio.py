@@ -25,32 +25,42 @@ def send_mail():
     name = request.form.get("name")
     email = request.form.get("email")
     message = request.form.get("message")
-    data_message = {"name":name, "email":email, "message":message}
+    data_message = {"name": name, "email": email, "message": message}
     if request.method == "POST":
-        send_email(data_message)
+        status = send_email(data_message)
+        if status:
+            return render_template("portfolio/sent_mail.html")
+        else:
+            return redirect(url_for("portfolio.index"))
+
 
 def send_email(data_message):
-    smtp_server = 'smtp.gmail.com'
+    smtp_server = "smtp.gmail.com"
     smtp_port = 587
     sender_email = current_app.config["EMAIL_DEST"]
     password = current_app.config["PSWD"]
     receiver_email = current_app.config["EMAIL_DEST"]
     message = MIMEMultipart()
-    message['From'] = sender_email
-    message['To'] = receiver_email
-    message['Subject'] = '👾Nuevo contacto desde la página web👾'
-    body = template.format(name=data_message["name"], 
-                            email=data_message["email"], 
-                            message=data_message["message"])
-    message.attach(MIMEText(body, 'html'))
+    message["From"] = sender_email
+    message["To"] = receiver_email
+    message["Subject"] = "👾Nuevo contacto desde la página web👾"
+    body = template.format(
+        name=data_message["name"],
+        email=data_message["email"],
+        message=data_message["message"],
+    )
+    message.attach(MIMEText(body, "html"))
+    status = None
     try:
-      server = smtplib.SMTP(smtp_server, smtp_port)
-      server.starttls()
-      server.login(sender_email, password)
-      text = message.as_string()
-      server.sendmail(sender_email, receiver_email, text)
-      return render_template("portfolio/sent_mail.html")
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(sender_email, password)
+        text = message.as_string()
+        server.sendmail(sender_email, receiver_email, text)
+        status = True
     except smtplib.SMTPException as e:
-      return redirect(url_for("portfolio.index"))
+        status = False
     finally:
-      server.quit()
+        if status is not None:
+            server.quit()
+    return status
